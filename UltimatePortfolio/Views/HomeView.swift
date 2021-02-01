@@ -8,8 +8,18 @@
 import SwiftUI
 
 struct HomeView: View {
+    @EnvironmentObject var dataController: DataController
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            VStack {
+                Button("Add Data") {
+                    dataController.deleteAll()
+                    try? dataController.createSampleData()
+                }
+            }
+            .navigationTitle("Home")
+        }
     }
 }
 

@@ -11,6 +11,10 @@
 		74637ADB25C71C3D00A219E5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74637ADA25C71C3D00A219E5 /* ContentView.swift */; };
 		74637ADD25C71C3F00A219E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74637ADC25C71C3F00A219E5 /* Assets.xcassets */; };
 		74637AE025C71C3F00A219E5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74637ADF25C71C3F00A219E5 /* Preview Assets.xcassets */; };
+		74637AF025C71CEB00A219E5 /* Main.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 74637AEE25C71CEB00A219E5 /* Main.xcdatamodeld */; };
+		74637AF325C7240600A219E5 /* DataControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74637AF225C7240600A219E5 /* DataControl.swift */; };
+		74637AF725C72BBE00A219E5 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74637AF625C72BBE00A219E5 /* HomeView.swift */; };
+		74637AFB25C72C4600A219E5 /* ProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74637AFA25C72C4600A219E5 /* ProjectsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +24,10 @@
 		74637ADC25C71C3F00A219E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		74637ADF25C71C3F00A219E5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		74637AE125C71C3F00A219E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		74637AEF25C71CEB00A219E5 /* Main.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Main.xcdatamodel; sourceTree = "<group>"; };
+		74637AF225C7240600A219E5 /* DataControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataControl.swift; sourceTree = "<group>"; };
+		74637AF625C72BBE00A219E5 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		74637AFA25C72C4600A219E5 /* ProjectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,10 +60,10 @@
 		74637AD725C71C3D00A219E5 /* UltimatePortfolio */ = {
 			isa = PBXGroup;
 			children = (
-				74637AD825C71C3D00A219E5 /* UltimatePortfolioApp.swift */,
-				74637ADA25C71C3D00A219E5 /* ContentView.swift */,
-				74637ADC25C71C3F00A219E5 /* Assets.xcassets */,
-				74637AE125C71C3F00A219E5 /* Info.plist */,
+				74637AE825C71C4600A219E5 /* App Lifecycle */,
+				74637AED25C71CC100A219E5 /* Data Model */,
+				74637AEA25C71C7000A219E5 /* Views */,
+				74637AE925C71C6200A219E5 /* Supporting Files */,
 				74637ADE25C71C3F00A219E5 /* Preview Content */,
 			);
 			path = UltimatePortfolio;
@@ -67,6 +75,42 @@
 				74637ADF25C71C3F00A219E5 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		74637AE825C71C4600A219E5 /* App Lifecycle */ = {
+			isa = PBXGroup;
+			children = (
+				74637AD825C71C3D00A219E5 /* UltimatePortfolioApp.swift */,
+			);
+			path = "App Lifecycle";
+			sourceTree = "<group>";
+		};
+		74637AE925C71C6200A219E5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				74637ADC25C71C3F00A219E5 /* Assets.xcassets */,
+				74637AE125C71C3F00A219E5 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		74637AEA25C71C7000A219E5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				74637ADA25C71C3D00A219E5 /* ContentView.swift */,
+				74637AF625C72BBE00A219E5 /* HomeView.swift */,
+				74637AFA25C72C4600A219E5 /* ProjectsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		74637AED25C71CC100A219E5 /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				74637AEE25C71CEB00A219E5 /* Main.xcdatamodeld */,
+				74637AF225C7240600A219E5 /* DataControl.swift */,
+			);
+			path = "Data Model";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,8 +182,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74637AFB25C72C4600A219E5 /* ProjectsView.swift in Sources */,
+				74637AF025C71CEB00A219E5 /* Main.xcdatamodeld in Sources */,
 				74637ADB25C71C3D00A219E5 /* ContentView.swift in Sources */,
 				74637AD925C71C3D00A219E5 /* UltimatePortfolioApp.swift in Sources */,
+				74637AF725C72BBE00A219E5 /* HomeView.swift in Sources */,
+				74637AF325C7240600A219E5 /* DataControl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,7 +319,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"UltimatePortfolio/Preview Content\"";
 				DEVELOPMENT_TEAM = GA887UX3BZ;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = UltimatePortfolio/Info.plist;
+				INFOPLIST_FILE = "UltimatePortfolio/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -293,7 +341,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"UltimatePortfolio/Preview Content\"";
 				DEVELOPMENT_TEAM = GA887UX3BZ;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = UltimatePortfolio/Info.plist;
+				INFOPLIST_FILE = "UltimatePortfolio/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -328,6 +376,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		74637AEE25C71CEB00A219E5 /* Main.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				74637AEF25C71CEB00A219E5 /* Main.xcdatamodel */,
+			);
+			currentVersion = 74637AEF25C71CEB00A219E5 /* Main.xcdatamodel */;
+			path = Main.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 74637ACD25C71C3D00A219E5 /* Project object */;
 }
