@@ -8,6 +8,8 @@
 import Foundation
 
 extension Project {
+    static let colors = ["Pink", "Purple", "Red", "Orange", "Gold", "Green", "Teal", "Light Blue", "Dark Blue", "Midnight", "Dark Gray", "Gray"]
+    
     var projectTitle: String {
         title ?? "New Project"
     }
@@ -21,7 +23,11 @@ extension Project {
     }
     
     var projectItems: [Item] {
-        (items?.allObjects as? [Item] ?? []).sorted {
+        items?.allObjects as? [Item] ?? []
+    }
+    
+    var projectItemsDefaultSorted: [Item] {
+        projectItems.sorted {
             if !$0.completed {
                 if $1.completed {
                     return true
@@ -39,6 +45,14 @@ extension Project {
             }
             
             return $0.itemCreationDate < $1.itemCreationDate
+        }
+    }
+    
+    func items(sortedBy sortOrder: Item.SortOrder) -> [Item] {
+        switch sortOrder {
+        case .title: return projectItems.sorted(by: \Item.itemTitle)
+        case .creationDate: return projectItems.sorted(by: \Item.itemCreationDate)
+        case .optimized: return projectItemsDefaultSorted
         }
     }
     
