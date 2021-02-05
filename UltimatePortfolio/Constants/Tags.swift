@@ -15,3 +15,7 @@ extension ProjectsView {
     static var openTag: String? = "Open"
     static var closedTag: String? = "Closed"
 }
+
+extension AwardsView {
+    static var tag: String? = "Awards"
+}

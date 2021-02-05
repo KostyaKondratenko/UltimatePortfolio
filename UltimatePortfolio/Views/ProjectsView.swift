@@ -28,34 +28,41 @@ struct ProjectsView: View {
     
     var body: some View {
         NavigationView {
-            List {
-                ForEach(projects.wrappedValue) { project in
-                    Section(header: ProjectHeaderView(project: project)) {
-                        ForEach(project.items(sortedBy: sortOrder)) { item in
-                            ItemRowView(item: item)
-                        }
-                        .onDelete {
-                            let allItems = project.projectItems
-                            $0.forEach { dataController.delete(allItems[$0]) }
-                            dataController.save()
-                        }
-                        
-                        if !showClosedProjects {
-                            Button {
-                                withAnimation {
-                                    let item = Item(context: managedObjectContext)
-                                    item.project = project
-                                    item.creationDate = Date()
+            Group {
+                if projects.wrappedValue.isEmpty {
+                    Text("There's nothing here right now.")
+                        .foregroundColor(.secondary)
+                } else {
+                    List {
+                        ForEach(projects.wrappedValue) { project in
+                            Section(header: ProjectHeaderView(project: project)) {
+                                ForEach(project.items(sortedBy: sortOrder)) { item in
+                                    ItemRowView(project: project, item: item)
+                                }
+                                .onDelete {
+                                    let allItems = project.items(sortedBy: sortOrder)
+                                    $0.forEach { dataController.delete(allItems[$0]) }
                                     dataController.save()
                                 }
-                            } label: {
-                                Label("Add New Item", systemImage: "plus")
+                                
+                                if !showClosedProjects {
+                                    Button {
+                                        withAnimation {
+                                            let item = Item(context: managedObjectContext)
+                                            item.project = project
+                                            item.creationDate = Date()
+                                            dataController.save()
+                                        }
+                                    } label: {
+                                        Label("Add New Item", systemImage: "plus")
+                                    }
+                                }
                             }
                         }
                     }
+                    .listStyle(InsetGroupedListStyle())
                 }
             }
-            .listStyle(InsetGroupedListStyle())
             .navigationTitle(showClosedProjects ? "Closed Projects" : "Open Projects")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
@@ -88,6 +95,8 @@ struct ProjectsView: View {
                                 .cancel()
                             ])
             }
+            
+            SelectorView()
         }
     }
 }
@@ -103,12 +112,30 @@ struct ProjectsView_Previews: PreviewProvider {
 }
 
 struct ItemRowView: View {
+    @ObservedObject var project: Project
     @ObservedObject var item: Item
     
     var body: some View {
         NavigationLink(
             destination: EditItemView(item: item),
-            label: { Text(item.itemTitle) }
+            label: { Label(title: { text }, icon: { icon }) }
         )
+    }
+    
+    private var icon: some View {
+        if item.completed {
+            return Image(systemName: "checkmark.circle")
+                .foregroundColor(Color(project.projectColor))
+        } else if item.priority == 3 {
+            return Image(systemName: "exclamationmark.triangle")
+                .foregroundColor(Color(project.projectColor))
+        } else {
+            return Image(systemName: "checkmark.circle")
+                .foregroundColor(.clear)
+        }
+    }
+    
+    private var text: some View {
+        Text(item.itemTitle)
     }
 }
