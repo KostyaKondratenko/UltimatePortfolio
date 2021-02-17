@@ -22,7 +22,11 @@ struct HomeView: View {
     
     init() {
         let request: NSFetchRequest<Item> = Item.fetchRequest()
-        request.predicate = NSPredicate(format: "completed = false")
+        
+        let completed = NSPredicate(format: "completed = false")
+        let openPredicate = NSPredicate(format: "project.closed = false")
+        
+        request.predicate = NSCompoundPredicate(type: .and, subpredicates: [completed, openPredicate])
         request.sortDescriptors = [
             NSSortDescriptor(keyPath: \Item.priority, ascending: false)
         ]
