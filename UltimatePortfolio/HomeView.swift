@@ -21,6 +21,8 @@ struct HomeView: View {
     }
     
     init() {
+        // Construct fetch request to show 10 highest priority,
+        // incomplete items from open projects
         let request: NSFetchRequest<Item> = Item.fetchRequest()
         
         let completed = NSPredicate(format: "completed = false")
