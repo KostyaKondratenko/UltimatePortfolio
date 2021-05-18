@@ -32,7 +32,7 @@
 		74637ADD25C71C3F00A219E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74637ADC25C71C3F00A219E5 /* Assets.xcassets */; };
 		74637AE025C71C3F00A219E5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74637ADF25C71C3F00A219E5 /* Preview Assets.xcassets */; };
 		74637AF025C71CEB00A219E5 /* Main.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 74637AEE25C71CEB00A219E5 /* Main.xcdatamodeld */; };
-		74637AF325C7240600A219E5 /* DataControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74637AF225C7240600A219E5 /* DataControl.swift */; };
+		74637AF325C7240600A219E5 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74637AF225C7240600A219E5 /* DataController.swift */; };
 		74637AF725C72BBE00A219E5 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74637AF625C72BBE00A219E5 /* HomeView.swift */; };
 		74637AFB25C72C4600A219E5 /* ProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74637AFA25C72C4600A219E5 /* ProjectsView.swift */; };
 /* End PBXBuildFile section */
@@ -66,7 +66,7 @@
 		74637ADF25C71C3F00A219E5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		74637AE125C71C3F00A219E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		74637AEF25C71CEB00A219E5 /* Main.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Main.xcdatamodel; sourceTree = "<group>"; };
-		74637AF225C7240600A219E5 /* DataControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataControl.swift; sourceTree = "<group>"; };
+		74637AF225C7240600A219E5 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		74637AF625C72BBE00A219E5 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		74637AFA25C72C4600A219E5 /* ProjectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -101,32 +101,16 @@
 		74637AD725C71C3D00A219E5 /* UltimatePortfolio */ = {
 			isa = PBXGroup;
 			children = (
+				F56D2C812653A8330088E214 /* Activities */,
 				74637AD825C71C3D00A219E5 /* UltimatePortfolioApp.swift */,
-				74637AEE25C71CEB00A219E5 /* Main.xcdatamodeld */,
-				74637AF225C7240600A219E5 /* DataControl.swift */,
-				745EEB4525C86B7600BE81A8 /* Project-CoreDataHelpers.swift */,
-				745EEB4225C86A7E00BE81A8 /* Item-CoreDataHelpers.swift */,
-				742FE9CE25CC92AA00D343DA /* Award.swift */,
+				74637AF225C7240600A219E5 /* DataController.swift */,
 				74637ADA25C71C3D00A219E5 /* ContentView.swift */,
-				74637AF625C72BBE00A219E5 /* HomeView.swift */,
-				74637AFA25C72C4600A219E5 /* ProjectsView.swift */,
-				742FE9B125C9D44E00D343DA /* EditItemView.swift */,
-				742FE9B825C9DE3200D343DA /* ProjectHeaderView.swift */,
-				742FE9BE25C9E31800D343DA /* EditProjectView.swift */,
-				742FE9C525CC895600D343DA /* SelectorView.swift */,
-				742FE9D125CC93BD00D343DA /* AwardsView.swift */,
-				742FE9B525C9DAD900D343DA /* Binding+OnChange.swift */,
-				742FE9C125CB283100D343DA /* Sequence+SortBy.swift */,
-				742FE9C825CC8C8D00D343DA /* Bundle+Decodable.swift */,
-				742FE9D425CDCD9300D343DA /* Color+Extensions.swift */,
-				745EEB4825C885DB00BE81A8 /* Tags.swift */,
-				745EEB4C25C886C500BE81A8 /* StorageKeys.swift */,
+				F56D2C792653A44F0088E214 /* Controllers */,
+				F56D2C7D2653A5330088E214 /* Configuration */,
+				F56D2C7C2653A52A0088E214 /* Localization */,
+				F56D2C7B2653A5240088E214 /* Extensions */,
 				74637AE925C71C6200A219E5 /* Supporting Files */,
 				74637ADE25C71C3F00A219E5 /* Preview Content */,
-				742FE9E125CEBD8000D343DA /* Localizable.strings */,
-				742FE9DB25CEAE1000D343DA /* Localizable.stringsdict */,
-				740AEBC225D1CA5A00102F15 /* ItemListView.swift */,
-				740AEBC525D1CB9900102F15 /* ProjectSummaryView.swift */,
 			);
 			path = UltimatePortfolio;
 			sourceTree = "<group>";
@@ -142,12 +126,100 @@
 		74637AE925C71C6200A219E5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				742FE9CB25CC8F4600D343DA /* Awards.json */,
 				74637ADC25C71C3F00A219E5 /* Assets.xcassets */,
-				74637AE125C71C3F00A219E5 /* Info.plist */,
 				742FE9BB25C9E22E00D343DA /* Colors.xcassets */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F56D2C772653A4470088E214 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				745EEB4525C86B7600BE81A8 /* Project-CoreDataHelpers.swift */,
+				745EEB4225C86A7E00BE81A8 /* Item-CoreDataHelpers.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F56D2C792653A44F0088E214 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		F56D2C7B2653A5240088E214 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F56D2C772653A4470088E214 /* Models */,
+				745EEB4825C885DB00BE81A8 /* Tags.swift */,
+				742FE9B525C9DAD900D343DA /* Binding+OnChange.swift */,
+				742FE9C125CB283100D343DA /* Sequence+SortBy.swift */,
+				742FE9C825CC8C8D00D343DA /* Bundle+Decodable.swift */,
+				742FE9D425CDCD9300D343DA /* Color+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F56D2C7C2653A52A0088E214 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				742FE9E125CEBD8000D343DA /* Localizable.strings */,
+				742FE9DB25CEAE1000D343DA /* Localizable.stringsdict */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		F56D2C7D2653A5330088E214 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				74637AEE25C71CEB00A219E5 /* Main.xcdatamodeld */,
+				74637AE125C71C3F00A219E5 /* Info.plist */,
+				745EEB4C25C886C500BE81A8 /* StorageKeys.swift */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		F56D2C812653A8330088E214 /* Activities */ = {
+			isa = PBXGroup;
+			children = (
+				F56D2C822653A83E0088E214 /* Home */,
+				F56D2C832653A8430088E214 /* Projects */,
+				F56D2C842653A8490088E214 /* Awards */,
+			);
+			path = Activities;
+			sourceTree = "<group>";
+		};
+		F56D2C822653A83E0088E214 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				74637AF625C72BBE00A219E5 /* HomeView.swift */,
+				740AEBC225D1CA5A00102F15 /* ItemListView.swift */,
+				740AEBC525D1CB9900102F15 /* ProjectSummaryView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		F56D2C832653A8430088E214 /* Projects */ = {
+			isa = PBXGroup;
+			children = (
+				74637AFA25C72C4600A219E5 /* ProjectsView.swift */,
+				742FE9C525CC895600D343DA /* SelectorView.swift */,
+				742FE9B825C9DE3200D343DA /* ProjectHeaderView.swift */,
+				742FE9BE25C9E31800D343DA /* EditProjectView.swift */,
+				742FE9B125C9D44E00D343DA /* EditItemView.swift */,
+			);
+			path = Projects;
+			sourceTree = "<group>";
+		};
+		F56D2C842653A8490088E214 /* Awards */ = {
+			isa = PBXGroup;
+			children = (
+				742FE9CB25CC8F4600D343DA /* Awards.json */,
+				742FE9CE25CC92AA00D343DA /* Award.swift */,
+				742FE9D125CC93BD00D343DA /* AwardsView.swift */,
+			);
+			path = Awards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,7 +316,7 @@
 				742FE9D525CDCD9300D343DA /* Color+Extensions.swift in Sources */,
 				745EEB4925C885DB00BE81A8 /* Tags.swift in Sources */,
 				74637AF725C72BBE00A219E5 /* HomeView.swift in Sources */,
-				74637AF325C7240600A219E5 /* DataControl.swift in Sources */,
+				74637AF325C7240600A219E5 /* DataController.swift in Sources */,
 				745EEB4325C86A7E00BE81A8 /* Item-CoreDataHelpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -387,9 +459,9 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"UltimatePortfolio/Preview Content\"";
-				DEVELOPMENT_TEAM = GA887UX3BZ;
+				DEVELOPMENT_TEAM = YU4FZHZX8H;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "UltimatePortfolio/Supporting Files/Info.plist";
+				INFOPLIST_FILE = UltimatePortfolio/Configuration/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -411,7 +483,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"UltimatePortfolio/Preview Content\"";
 				DEVELOPMENT_TEAM = GA887UX3BZ;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "UltimatePortfolio/Supporting Files/Info.plist";
+				INFOPLIST_FILE = UltimatePortfolio/Configuration/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
